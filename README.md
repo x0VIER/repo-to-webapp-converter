@@ -279,7 +279,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- **Manus AI** - Automated development and deployment
+- **Open Source Community** - Automated development and deployment
 - **Vercel** - Free hosting platform
 - **React Team** - Modern web framework
 - **Tailwind CSS** - Utility-first CSS framework
@@ -294,4 +294,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Made with ❤️ by Manus AI** - Transforming repositories into beautiful web applications, one commit at a time.
+**Made with ❤️ by the open source community** - Transforming repositories into beautiful web applications, one commit at a time.
