@@ -14,13 +14,13 @@ export async function generateReactApp(config) {
     const appName = `${config.name}-webapp`;
     const appPath = path.join(process.cwd(), 'generated', appName);
 
-    // Create React app using manus template
+    // Create React app using standard template
     console.log(chalk.gray(`  Creating React app: ${appName}...`));
     
     // Ensure generated directory exists
     fs.ensureDirSync(path.dirname(appPath));
     
-    // Create React app (simulated - in real implementation would use manus-create-react-app)
+    // Create React app (simulated - in real implementation would use create-react-app)
     execSync(`npx create-react-app ${appPath} --template typescript`, { stdio: 'pipe' });
     
     // Install additional dependencies
