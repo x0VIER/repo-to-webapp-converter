@@ -1,0 +1,118 @@
+{
+  "platforms": {
+    "vercel": {
+      "enabled": true,
+      "name": "Vercel",
+      "url": "https://vercel.com",
+      "features": {
+        "customDomains": true,
+        "ssl": true,
+        "cdn": true,
+        "analytics": true,
+        "serverless": true
+      },
+      "limits": {
+        "bandwidth": "100GB/month",
+        "builds": "6000 minutes/month",
+        "functions": "100GB-hours/month"
+      },
+      "config": {
+        "framework": "react",
+        "buildCommand": "npm run build",
+        "outputDirectory": "dist",
+        "installCommand": "npm install"
+      }
+    },
+    "netlify": {
+      "enabled": true,
+      "name": "Netlify",
+      "url": "https://netlify.com",
+      "features": {
+        "customDomains": true,
+        "ssl": true,
+        "cdn": true,
+        "forms": true,
+        "functions": true
+      },
+      "limits": {
+        "bandwidth": "100GB/month",
+        "builds": "300 minutes/month",
+        "functions": "125k requests/month"
+      },
+      "config": {
+        "buildCommand": "npm run build",
+        "publishDirectory": "dist",
+        "functionsDirectory": "functions"
+      }
+    },
+    "github": {
+      "enabled": true,
+      "name": "GitHub Pages",
+      "url": "https://pages.github.com",
+      "features": {
+        "customDomains": true,
+        "ssl": true,
+        "cdn": false,
+        "staticOnly": true
+      },
+      "limits": {
+        "bandwidth": "100GB/month",
+        "storage": "1GB",
+        "builds": "10 per hour"
+      },
+      "config": {
+        "branch": "gh-pages",
+        "directory": "dist"
+      }
+    },
+    "surge": {
+      "enabled": false,
+      "name": "Surge.sh",
+      "url": "https://surge.sh",
+      "features": {
+        "customDomains": false,
+        "ssl": false,
+        "cdn": true,
+        "staticOnly": true
+      },
+      "limits": {
+        "bandwidth": "Unlimited",
+        "storage": "Unlimited"
+      },
+      "config": {
+        "domain": "auto-generated"
+      }
+    }
+  },
+  "deployment": {
+    "strategy": "multi-platform",
+    "primary": "vercel",
+    "fallback": "netlify",
+    "testing": "github",
+    "retries": 3,
+    "timeout": 300000
+  },
+  "domains": {
+    "custom": {
+      "enabled": false,
+      "domain": "your-domain.com",
+      "subdomain": "apps"
+    },
+    "generated": {
+      "pattern": "{app-name}-{platform}.{domain}",
+      "fallback": "{app-name}.{platform}.app"
+    }
+  },
+  "ssl": {
+    "enabled": true,
+    "provider": "letsencrypt",
+    "autoRenewal": true
+  },
+  "monitoring": {
+    "enabled": true,
+    "uptime": true,
+    "performance": true,
+    "errors": true,
+    "analytics": true
+  }
+}
